@@ -1,0 +1,74 @@
+{% extends 'main/layout.html' %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<br><br>
+
+
+<div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Get in Touch</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <form class="form-contact contact_form" action="http://127.0.0.1:8000/contact/addcontact/" method="post">
+                            {% csrf_token %}
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control w-100" name="message"  cols="30" rows="9"  placeholder=" Enter Message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="name"  type="text"  placeholder="Enter your name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="email"  type="email"  placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="subject"  type="text"  placeholder="Enter Subject">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                {{ form.as_p }}
+                                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-home"></i></span>
+                            <div class="media-body">
+                                <h3>Baki,Azerbaycan</h3>
+                                <p>Yasamal rayonu,Serifzade kuc</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                            <div class="media-body">
+                                <h3>+994773678777</h3>
+                                <p>Bazar er. - Cume ,10:00-18:00</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-email"></i></span>
+                            <div class="media-body">
+                                <h3>nasib_az@mail.ru</h3>
+                                <p>Bize yazin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+   
+
+
+{% endblock  %}
